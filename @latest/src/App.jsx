@@ -1,21 +1,23 @@
-
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { useState } from 'react'
 import './App.css'
+import { puppyList } from './data'
 
 function App() {
   const [count, setCount] = useState(0)
-
+  const [puppies, setPuppies] = useState(puppyList)
+  const [featPupId,setFeatPupId] = useState(null);
+console.log(puppies)
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+      <div className = "App">
+        {
+          puppies.map((puppy) => {
+            return <p onClick = {() => {}} key={puppy.id}>{puppy.name}
+            </p>
+          })
+        }
       </div>
+      
       
     </>
   )
